@@ -1,5 +1,5 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
-// Trigger fresh build with the saved Build Environment Variables
+// Redeploy trigger - dummy change
 
 import { renderErrorPage } from "./lib/error-page";
 
