@@ -41,6 +41,7 @@ function openLightbox(src, type, alt) {
     mediaElement.controls = true;
     mediaElement.autoplay = true;
     mediaElement.playsInline = true;
+    mediaElement.muted = false; // Start unmuted
     mediaElement.className = "w-full h-auto max-h-[85vh] bg-black";
 
     // Add mute/unmute button
@@ -60,6 +61,16 @@ function openLightbox(src, type, alt) {
 
     container.appendChild(mediaElement);
     container.appendChild(muteBtn);
+
+    // Play with fallback if browser rejects unmuted autoplay
+    setTimeout(() => {
+      mediaElement.play().catch(() => {
+        mediaElement.muted = true;
+        muteBtn.innerHTML = '<i data-lucide="volume-x" class="w-5 h-5 text-foreground"></i>';
+        if (typeof lucide !== "undefined") lucide.createIcons();
+        mediaElement.play();
+      });
+    }, 50);
   } else {
     mediaElement = document.createElement("img");
     mediaElement.src = src;

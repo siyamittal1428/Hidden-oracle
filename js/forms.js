@@ -197,6 +197,21 @@ function initFormSubmissions() {
         payload["phone"] = formattedPhone.value;
       }
 
+      // Local preview protocol warning
+      if (window.location.protocol === "file:") {
+        if (errorContainer) {
+          errorContainer.innerHTML = "<strong>Local Preview Notice:</strong> Email submissions do not work when opening HTML files directly from your computer (file:// protocol). Please upload these files to your hosting server (Hostinger, GoDaddy, cPanel) or run a local server to test the form.";
+          errorContainer.classList.remove("hidden");
+        } else {
+          alert("Email submissions do not work when opening HTML files directly from your computer (file:// protocol). Please upload these files to your hosting server.");
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = submitBtn.dataset.originalText;
+        }
+        return;
+      }
+
       try {
         const response = await fetch("send-email.php", {
           method: "POST",
@@ -206,7 +221,12 @@ function initFormSubmissions() {
           body: JSON.stringify(payload),
         });
 
-        const result = await response.json();
+        let result;
+        try {
+          result = await response.json();
+        } catch (jsonErr) {
+          throw new Error("Unable to parse email server response. Please make sure PHP is running on your server.");
+        }
 
         if (response.ok && result.ok) {
           // Success state
@@ -225,7 +245,7 @@ function initFormSubmissions() {
             }
           }
         } else {
-          throw new Error(result.error || "Unable to send. Please try again.");
+          throw new Error((result && result.error) || "Unable to send. Please try again.");
         }
       } catch (err) {
         // Error state

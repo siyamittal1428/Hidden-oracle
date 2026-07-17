@@ -127,3 +127,13 @@
   0%, 100% { opacity: 0.15; }
   50% { opacity: 0.85; }
 }
+
+/* Custom Select Dropdown Styling */
+select option {
+  background-color: oklch(0.19 0.05 285) !important; /* matches var(--card) */
+  color: oklch(0.97 0.02 90) !important; /* matches var(--foreground) */
+}
+select option:hover, select option:focus, select option:active {
+  background-color: oklch(0.82 0.14 85) !important; /* primary gold */
+  color: oklch(0.12 0.04 285) !important;
+}
