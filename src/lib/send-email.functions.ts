@@ -88,19 +88,27 @@ function buildHtml(kind: "booking" | "contact", data: EmailPayload) {
 export const sendInquiryEmail = createServerFn({ method: "POST" })
   .validator((input: unknown) => payloadSchema.parse(input))
   .handler(async ({ data }) => {
-    const { getEvent } = await import(/* @vite-ignore */ "vinxi/http");
-    const event = getEvent();
-    const cloudflareEnv = event?.context?.cloudflare?.env as Record<string, string> | undefined;
+    let apiKey = process.env.RESEND_API_KEY;
+    let fromAddress = process.env.MAIL_FROM || "onboarding@resend.dev";
+    let rawToAddresses = process.env.MAIL_TO;
 
-    const apiKey = cloudflareEnv?.RESEND_API_KEY || process.env.RESEND_API_KEY;
+    try {
+      const { env } = await import(/* @vite-ignore */ "cloudflare:workers");
+      if (env) {
+        if (env.RESEND_API_KEY) apiKey = env.RESEND_API_KEY;
+        if (env.MAIL_FROM) fromAddress = env.MAIL_FROM;
+        if (env.MAIL_TO) rawToAddresses = env.MAIL_TO;
+      }
+    } catch (e) {
+      // Ignore during local development/build
+    }
+
     if (!apiKey || apiKey === "your_resend_api_key_here") {
       throw new Error("Email service is not configured. Please set a valid RESEND_API_KEY.");
     }
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);
 
-    const fromAddress = cloudflareEnv?.MAIL_FROM || process.env.MAIL_FROM || "onboarding@resend.dev";
-    const rawToAddresses = cloudflareEnv?.MAIL_TO || process.env.MAIL_TO;
     const toAddresses = rawToAddresses
       ? rawToAddresses.split(",").map(e => e.trim())
       : ["siyamittal1428@gmail.com"];
