@@ -226,7 +226,7 @@ function initFormSubmissions() {
             body: JSON.stringify(payload),
           });
           text = await response.text();
-          if (text.includes("<?php") || text.includes("getenv(")) {
+          if (!response.ok || text.includes("<?php") || text.includes("getenv(")) {
             isPhpParsed = false;
           }
         } catch (phpErr) {
