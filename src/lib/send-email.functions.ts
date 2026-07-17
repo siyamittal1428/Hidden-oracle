@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { getEvent } from "vinxi/http";
 
 const payloadSchema = z.object({
   kind: z.enum(["booking", "contact"]),
@@ -88,16 +89,20 @@ function buildHtml(kind: "booking" | "contact", data: EmailPayload) {
 export const sendInquiryEmail = createServerFn({ method: "POST" })
   .validator((input: unknown) => payloadSchema.parse(input))
   .handler(async ({ data }) => {
-    const apiKey = process.env.RESEND_API_KEY;
+    const event = getEvent();
+    const cloudflareEnv = event?.context?.cloudflare?.env as Record<string, string> | undefined;
+
+    const apiKey = cloudflareEnv?.RESEND_API_KEY || process.env.RESEND_API_KEY;
     if (!apiKey || apiKey === "your_resend_api_key_here") {
       throw new Error("Email service is not configured. Please set a valid RESEND_API_KEY.");
     }
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);
 
-    const fromAddress = process.env.MAIL_FROM || "onboarding@resend.dev";
-    const toAddresses = process.env.MAIL_TO
-      ? process.env.MAIL_TO.split(",").map(e => e.trim())
+    const fromAddress = cloudflareEnv?.MAIL_FROM || process.env.MAIL_FROM || "onboarding@resend.dev";
+    const rawToAddresses = cloudflareEnv?.MAIL_TO || process.env.MAIL_TO;
+    const toAddresses = rawToAddresses
+      ? rawToAddresses.split(",").map(e => e.trim())
       : ["siyamittal1428@gmail.com"];
 
     const subject =
