@@ -76,11 +76,11 @@ export async function onRequest(context) {
     const payload = await context.request.json();
 
     // Environment variables from Cloudflare Pages Dashboard
-    let apiKey = context.env.RESEND_API_KEY || "re_ZVWvzKYa_ETVfkNS5n7eFSL8yZiU6zibL";
-    console.log("Wrangler active key prefix is:", apiKey.substring(0, 10) + "...");
-    if (apiKey === "re_6Nt3nAyz_2zV5BTUsNbFruK4wb5k7zcej" || apiKey === "re_PAqyFWWc_3nifCbSEAcCNS8FQa17wLoZ9") {
-      console.log("Overriding old key with verified new key!");
-      apiKey = "re_ZVWvzKYa_ETVfkNS5n7eFSL8yZiU6zibL";
+    let apiKey = context.env.RESEND_API_KEY;
+    if (apiKey) {
+      console.log("Wrangler active key prefix is:", apiKey.substring(0, 10) + "...");
+    } else {
+      console.log("No API Key detected in environment variables!");
     }
     const mailTo = context.env.MAIL_TO || "siyamittal1428@gmail.com";
     const mailFrom = context.env.MAIL_FROM || "onboarding@resend.dev";
