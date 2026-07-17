@@ -76,7 +76,7 @@ export async function onRequest(context) {
     const payload = await context.request.json();
 
     // Environment variables from Cloudflare Pages Dashboard
-    const apiKey = context.env.RESEND_API_KEY || "re_6Nt3nAyz_2zV5BTUsNbFruK4wb5k7zcej";
+    const apiKey = context.env.RESEND_API_KEY || "re_PAqyFWWc_3nifCbSEAcCNS8FQa17wLoZ9";
     const mailTo = context.env.MAIL_TO || "siyamittal1428@gmail.com";
     const mailFrom = context.env.MAIL_FROM || "onboarding@resend.dev";
 
