@@ -1,4 +1,5 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
+// Trigger build deployment with new environment variables
 
 import { renderErrorPage } from "./lib/error-page";
 
