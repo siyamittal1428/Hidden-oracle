@@ -77,7 +77,9 @@ export async function onRequest(context) {
 
     // Environment variables from Cloudflare Pages Dashboard
     let apiKey = context.env.RESEND_API_KEY || "re_ZVWvzKYa_ETVfkNS5n7eFSL8yZiU6zibL";
+    console.log("Wrangler active key prefix is:", apiKey.substring(0, 10) + "...");
     if (apiKey === "re_6Nt3nAyz_2zV5BTUsNbFruK4wb5k7zcej" || apiKey === "re_PAqyFWWc_3nifCbSEAcCNS8FQa17wLoZ9") {
+      console.log("Overriding old key with verified new key!");
       apiKey = "re_ZVWvzKYa_ETVfkNS5n7eFSL8yZiU6zibL";
     }
     const mailTo = context.env.MAIL_TO || "siyamittal1428@gmail.com";
