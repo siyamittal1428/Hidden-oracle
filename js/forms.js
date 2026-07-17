@@ -257,7 +257,10 @@ function initFormSubmissions() {
         try {
           result = JSON.parse(text);
         } catch (jsonErr) {
-          throw new Error("Unable to parse email server response. Please make sure PHP or Serverless functions are running on your server.");
+          console.error("Raw server response:", text);
+          // Strip HTML tags for clean display if possible, or truncate
+          const cleanText = text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+          throw new Error(`Server Error (${response.status}): ${cleanText.substring(0, 120)}...`);
         }
 
         if (response.ok && result.ok) {
