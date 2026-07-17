@@ -213,26 +213,51 @@ function initFormSubmissions() {
       }
 
       try {
-        const response = await fetch("send-email.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
+        let response;
+        let text;
+        let isPhpParsed = true;
 
-        const text = await response.text();
+        try {
+          response = await fetch("send-email.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+          text = await response.text();
+          if (text.includes("<?php") || text.includes("getenv(")) {
+            isPhpParsed = false;
+          }
+        } catch (phpErr) {
+          isPhpParsed = false;
+        }
 
-        // Check if static server (e.g. Live Server) returned PHP source code
-        if (text.includes("<?php") || text.includes("getenv(")) {
-          throw new Error("VS Code Live Server (or similar static server) detected. It does not run PHP code. Please upload these files to your Hostinger/GoDaddy hosting or use a local PHP server (like XAMPP) to send emails.");
+        // Fallback to Cloudflare Pages Functions endpoint if PHP is not parsed or failed
+        if (!isPhpParsed) {
+          try {
+            response = await fetch("send-email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            });
+            text = await response.text();
+          } catch (cfErr) {
+            throw new Error("Local server detected without PHP. Please upload files to Hostinger/GoDaddy, or run a local PHP server to test emails.");
+          }
+          
+          if (response.status === 404) {
+            throw new Error("VS Code Live Server (or similar static server) detected. It does not run PHP code. Please upload these files to your Hostinger/GoDaddy hosting to send emails.");
+          }
         }
 
         let result;
         try {
           result = JSON.parse(text);
         } catch (jsonErr) {
-          throw new Error("Unable to parse email server response. Please make sure PHP is running on your server.");
+          throw new Error("Unable to parse email server response. Please make sure PHP or Serverless functions are running on your server.");
         }
 
         if (response.ok && result.ok) {
