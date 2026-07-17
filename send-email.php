@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // CONFIGURATION
 // ----------------------------------------------------
 // You can define variables here, or set them as environment variables on your server.
-$resend_api_key = getenv('RESEND_API_KEY') ?: 're_PAqyFWWc_3nifCbSEAcCNS8FQa17wLoZ9';
+$resend_api_key = getenv('RESEND_API_KEY') ?: 're_ZVWvzKYa_ETVfkNS5n7eFSL8yZiU6zibL';
 $mail_from      = getenv('MAIL_FROM')      ?: 'onboarding@resend.dev';
 $mail_to        = getenv('MAIL_TO')        ?: 'siyamittal1428@gmail.com';
 
