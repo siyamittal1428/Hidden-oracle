@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hidden Oracle — Tarot Readings & Spiritual Guidance by Siya</title>
+  <meta name="description" content="Book personalized tarot readings for love, career, finance, and life's questions. Trusted intuitive guidance from Siya, professional spiritual advisor.">
+  <meta name="author" content="Hidden Oracle">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hidden Oracle — Tarot Readings & Spiritual Guidance">
+  <meta property="og:description" content="Discover your path through the wisdom of Tarot. Personalized readings for love, career, finance, and spiritual growth.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hidden Oracle">
+  <meta property="og:url" content="https://hiddenoracle.com">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hidden Oracle — Tarot Readings by Siya">
+  <meta name="twitter:description" content="Discover your path through the wisdom of Tarot.">
+  
+  <link rel="canonical" href="https://hiddenoracle.com/">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="bg-background text-foreground font-sans overflow-x-hidden">
+
+  <!-- Shared Header Injected by main.js -->
+  <header class="site-header"></header>
+
+  <main class="min-h-screen">
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center overflow-hidden pt-24" style="background: var(--gradient-hero);">
+      <!-- Cosmic backgrounds -->
+      <div class="particle-field absolute inset-0 overflow-hidden pointer-events-none" data-count="25"></div>
+      <div class="absolute inset-0 overflow-hidden pointer-events-none" id="star-field">
+        <!-- Javascript dynamically fills density here, or we can use static stars for instant display -->
+      </div>
+      
+      <!-- Fog & Moon -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div class="absolute -bottom-20 -left-20 w-[60vw] h-[40vh] rounded-full blur-3xl opacity-30" style="background: radial-gradient(circle, var(--accent), transparent 70%);"></div>
+        <div class="absolute -top-20 -right-20 w-[50vw] h-[40vh] rounded-full blur-3xl opacity-20" style="background: radial-gradient(circle, var(--primary), transparent 70%);"></div>
+      </div>
+      <div class="absolute top-20 right-4 md:right-16 opacity-80 hidden sm:block pointer-events-none" aria-hidden="true">
+        <div class="animate-moon-glow relative">
+          <div class="w-40 h-40 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-gold-soft via-primary to-accent/70"></div>
+          <div class="absolute inset-2 rounded-full bg-gradient-to-br from-background/40 to-transparent mix-blend-overlay"></div>
+          <div class="absolute inset-0 rounded-full opacity-20" style="background: radial-gradient(circle at 30% 30%, transparent 20%, oklch(0.5 0.1 300 / 0.4) 40%, transparent 60%);"></div>
+        </div>
+      </div>
+
+      <!-- Floating Cards -->
+      <div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden">
+        <!-- Floating Card 1 -->
+        <div class="absolute w-20 h-32 md:w-28 md:h-44" style="top: 12%; left: 8%; transform: rotate(-18deg); opacity: 0.7;">
+          <div class="animate-float-slow w-full h-full rounded-xl relative overflow-hidden" style="background: linear-gradient(135deg, var(--mystic-deep), oklch(0.25 0.1 300)); border: 2px solid oklch(0.82 0.14 85 / 0.6); box-shadow: 0 0 30px oklch(0.82 0.14 85 / 0.3), inset 0 0 30px oklch(0.55 0.18 300 / 0.3);">
+            <div class="absolute inset-2 rounded-lg border border-primary/40 flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-6 h-6 md:w-10 md:h-10 text-primary/80 animate-twinkle"></i>
+            </div>
+          </div>
+        </div>
+        <!-- Floating Card 2 -->
+        <div class="absolute w-24 h-36 md:w-32 md:h-48" style="top: 22%; right: 10%; transform: rotate(15deg); opacity: 0.7;">
+          <div class="animate-float-card w-full h-full rounded-xl relative overflow-hidden" style="background: linear-gradient(135deg, var(--mystic-deep), oklch(0.25 0.1 300)); border: 2px solid oklch(0.82 0.14 85 / 0.6); box-shadow: 0 0 30px oklch(0.82 0.14 85 / 0.3), inset 0 0 30px oklch(0.55 0.18 300 / 0.3);">
+            <div class="absolute inset-2 rounded-lg border border-primary/40 flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-6 h-6 md:w-10 md:h-10 text-primary/80 animate-twinkle"></i>
+            </div>
+          </div>
+        </div>
+        <!-- Floating Card 3 -->
+        <div class="absolute w-16 h-24 md:w-24 md:h-36" style="bottom: 18%; left: 12%; transform: rotate(-8deg); opacity: 0.7;">
+          <div class="animate-float-slow w-full h-full rounded-xl relative overflow-hidden" style="background: linear-gradient(135deg, var(--mystic-deep), oklch(0.25 0.1 300)); border: 2px solid oklch(0.82 0.14 85 / 0.6); box-shadow: 0 0 30px oklch(0.82 0.14 85 / 0.3), inset 0 0 30px oklch(0.55 0.18 300 / 0.3);">
+            <div class="absolute inset-2 rounded-lg border border-primary/40 flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-6 h-6 md:w-10 md:h-10 text-primary/80 animate-twinkle"></i>
+            </div>
+          </div>
+        </div>
+        <!-- Floating Card 4 -->
+        <div class="absolute w-20 h-32 md:w-28 md:h-44" style="bottom: 26%; right: 14%; transform: rotate(22deg); opacity: 0.7;">
+          <div class="animate-float-card w-full h-full rounded-xl relative overflow-hidden" style="background: linear-gradient(135deg, var(--mystic-deep), oklch(0.25 0.1 300)); border: 2px solid oklch(0.82 0.14 85 / 0.6); box-shadow: 0 0 30px oklch(0.82 0.14 85 / 0.3), inset 0 0 30px oklch(0.55 0.18 300 / 0.3);">
+            <div class="absolute inset-2 rounded-lg border border-primary/40 flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-6 h-6 md:w-10 md:h-10 text-primary/80 animate-twinkle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Main Content Grid -->
+      <div class="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center py-16">
+        <div class="text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 rounded-full glass-gold px-4 py-1.5 text-xs tracking-[0.3em] uppercase text-primary">
+            <i data-lucide="sparkles" class="w-3 h-3"></i> The Hidden Oracle
+          </span>
+
+          <h1 class="mt-6 font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight">
+            <span class="text-foreground/95">Discover Your Path</span>
+            <br>
+            <span class="text-foreground/70">Through the Wisdom of</span> 
+            <span class="text-gradient-gold italic">Tarot</span>
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
+            Receive personalized Tarot readings for love, relationships, career, finance, family, and spiritual guidance — from a trusted intuitive advisor.
+          </p>
+
+          <div class="mt-9 flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a href="booking.html" class="relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground bg-gradient-to-r from-primary via-gold-soft to-primary bg-[length:200%_100%] hover:bg-[position:100%_0] hover:scale-105 transition-all duration-300 glow-gold active:scale-97">
+              <span class="relative z-10 flex items-center gap-2">Book a Reading <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+            </a>
+            <a href="services.html" class="relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide text-foreground glass border border-primary/40 hover:glass-gold hover:scale-105 transition-all duration-300 active:scale-97">
+              <span class="relative z-10 flex items-center gap-2">Explore Services</span>
+            </a>
+          </div>
+
+          <div class="mt-10 flex gap-6 items-center justify-center lg:justify-start text-xs text-muted-foreground">
+            <div>✦ 100% Confidential</div>
+            <div>✦ Online Sessions</div>
+            <div class="hidden sm:block">✦ Trusted Guidance</div>
+          </div>
+        </div>
+
+        <!-- Hero Portrait Image Frame -->
+        <div class="relative">
+          <div class="relative">
+            <!-- glowing gold ring -->
+            <div class="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-primary via-accent to-primary opacity-70 blur-lg animate-glow-pulse"></div>
+            <div class="absolute -inset-0.5 rounded-[2rem] bg-gradient-to-br from-primary via-gold-soft to-accent"></div>
+            <div class="relative overflow-hidden rounded-[1.9rem] aspect-[4/5]">
+              <img src="assets/images/siya-1.png" alt="Siya — Tarot Reader" loading="lazy" class="w-full h-full object-cover">
+              <!-- mystical overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style="background: radial-gradient(circle at 30% 20%, var(--primary), transparent 60%);"></div>
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -left-4 md:-left-8 glass-gold rounded-2xl px-5 py-3 glow-gold">
+            <div class="text-xs uppercase tracking-widest text-primary">Trusted by</div>
+            <div class="font-display text-2xl text-gradient-gold">1,200+ Souls</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="services.html" class="absolute bottom-8 left-1/2 -translate-x-1/2 group">
+        <div class="flex flex-col items-center gap-2 text-primary/70 group-hover:text-primary transition-colors">
+          <span class="text-[10px] tracking-[0.3em] uppercase">Scroll to explore</span>
+          <i data-lucide="arrow-down" class="w-4 h-4 animate-bounce"></i>
+        </div>
+      </a>
+    </section>
+
+    <!-- INTRO / ABOUT PREVIEW SECTION -->
+    <section id="intro" class="relative py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="reveal text-center max-w-3xl mx-auto mb-14">
+          <span class="inline-block text-xs uppercase tracking-[0.3em] text-primary/80 mb-3">✦ Meet Your Guide ✦</span>
+          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-tight text-gradient-gold">
+            Guided by intuition. <em class="not-italic text-foreground/80">Rooted in truth.</em>
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
+          <div class="relative">
+            <!-- glowing ring -->
+            <div class="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-primary via-accent to-primary opacity-70 blur-lg animate-glow-pulse"></div>
+            <div class="absolute -inset-0.5 rounded-[2rem] bg-gradient-to-br from-primary via-gold-soft to-accent"></div>
+            <div class="relative overflow-hidden rounded-[1.9rem] aspect-[4/5]">
+              <img src="assets/images/siya-3.png" alt="Siya at her tarot table" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style="background: radial-gradient(circle at 30% 20%, var(--primary), transparent 60%);"></div>
+            </div>
+          </div>
+          <div>
+            <div class="reveal">
+              <p class="text-lg text-foreground/85 leading-relaxed">
+                I'm <span class="text-gradient-gold font-semibold">Siya</span> — a professional tarot reader and spiritual guide. For years I've helped seekers navigate love, career, and life transitions with clarity and compassion.
+              </p>
+            </div>
+            <div class="reveal" data-delay="0.1">
+              <p class="mt-5 text-muted-foreground leading-relaxed">
+                My readings blend traditional tarot with intuitive channeling, energy work, and a deep respect for your free will. You'll leave every session grounded, seen, and ready to move forward.
+              </p>
+            </div>
+            <div class="reveal" data-delay="0.2">
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a href="about.html" class="relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground bg-gradient-to-r from-primary via-gold-soft to-primary bg-[length:200%_100%] hover:bg-[position:100%_0] hover:scale-105 transition-all duration-300 glow-gold active:scale-97">
+                  My Story
+                </a>
+                <a href="booking.html" class="relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide text-foreground glass border border-primary/40 hover:glass-gold hover:scale-105 transition-all duration-300 active:scale-97">
+                  Book a Session
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counting statistics row -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center glass-gold rounded-3xl p-6 md:p-8" data-counter-to="1200" data-counter-suffix="+">
+            <div class="counter-number font-display text-4xl md:text-5xl text-gradient-gold">0+</div>
+            <div class="mt-2 text-xs md:text-sm uppercase tracking-[0.25em] text-muted-foreground">Happy Clients</div>
+          </div>
+          <div class="text-center glass-gold rounded-3xl p-6 md:p-8" data-counter-to="2500" data-counter-suffix="+">
+            <div class="counter-number font-display text-4xl md:text-5xl text-gradient-gold">0+</div>
+            <div class="mt-2 text-xs md:text-sm uppercase tracking-[0.25em] text-muted-foreground">Successful Readings</div>
+          </div>
+          <div class="text-center glass-gold rounded-3xl p-6 md:p-8" data-counter-to="4" data-counter-suffix="+">
+            <div class="counter-number font-display text-4xl md:text-5xl text-gradient-gold">0+</div>
+            <div class="mt-2 text-xs md:text-sm uppercase tracking-[0.25em] text-muted-foreground">Years of Experience</div>
+          </div>
+          <div class="text-center glass-gold rounded-3xl p-6 md:p-8" data-counter-to="99" data-counter-suffix="%">
+            <div class="counter-number font-display text-4xl md:text-5xl text-gradient-gold">0%</div>
+            <div class="mt-2 text-xs md:text-sm uppercase tracking-[0.25em] text-muted-foreground">Positive Reviews</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES PREVIEW SECTION -->
+    <section id="services" class="relative py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="reveal text-center max-w-3xl mx-auto mb-14">
+          <span class="inline-block text-xs uppercase tracking-[0.3em] text-primary/80 mb-3">✦ Sacred Offerings ✦</span>
+          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-tight text-gradient-gold">Readings for every chapter of your life</h2>
+          <p class="mt-4 text-muted-foreground text-base sm:text-lg">From matters of the heart to career and spiritual awakening — choose the reading that calls you.</p>
+        </div>
+
+        <!-- Rendered dynamically by js/services.js with limit = 6 -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="services-grid" data-limit="6"></div>
+
+        <div class="mt-12 text-center reveal">
+          <a href="services.html" class="relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide text-foreground glass border border-primary/40 hover:glass-gold hover:scale-105 transition-all duration-300 active:scale-97">
+            View All Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE ME SECTION -->
+    <section id="why" class="relative py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="reveal text-center max-w-3xl mx-auto mb-14">
+          <span class="inline-block text-xs uppercase tracking-[0.3em] text-primary/80 mb-3">✦ Why Choose Me ✦</span>
+          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-tight text-gradient-gold">A reading that honors your journey</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Item 1 -->
+          <div class="reveal glass rounded-3xl p-6 hover:glass-gold transition-all group hover:-translate-y-2 cursor-default" data-delay="0.0">
+            <div class="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 group-hover:animate-glow-pulse">
+              <i data-lucide="lock" class="w-5 h-5 text-primary"></i>
+            </div>
+            <h3 class="mt-4 font-display text-xl text-foreground">Confidential Sessions</h3>
+            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Your story is sacred. Every reading is completely private.</p>
+          </div>
+          <!-- Item 2 -->
+          <div class="reveal glass rounded-3xl p-6 hover:glass-gold transition-all group hover:-translate-y-2 cursor-default" data-delay="0.06">
+            <div class="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 group-hover:animate-glow-pulse">
+              <i data-lucide="sparkles" class="w-5 h-5 text-primary"></i>
+            </div>
+            <h3 class="mt-4 font-display text-xl text-foreground">Accurate Guidance</h3>
+            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Grounded intuitive insight backed by years of practice.</p>
+          </div>
+          <!-- Item 3 -->
+          <div class="reveal glass rounded-3xl p-6 hover:glass-gold transition-all group hover:-translate-y-2 cursor-default" data-delay="0.12">
+            <div class="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 group-hover:animate-glow-pulse">
+              <i data-lucide="heart" class="w-5 h-5 text-primary"></i>
+            </div>
+            <h3 class="mt-4 font-display text-xl text-foreground">Positive Energy</h3>
+            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Every session ends with clarity, hope, and empowerment.</p>
+          </div>
+          <!-- Item 4 -->
+          <div class="reveal glass rounded-3xl p-6 hover:glass-gold transition-all group hover:-translate-y-2 cursor-default" data-delay="0.18">
+            <div class="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 group-hover:animate-glow-pulse">
+              <i data-lucide="star" class="w-5 h-5 text-primary"></i>
+            </div>
+            <h3 class="mt-4 font-display text-xl text-foreground">Personalized Readings</h3>
+            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">No two spreads alike — always shaped to your energy.</p>
+          </div>
+          <!-- Item 5 -->
+          <div class="reveal glass rounded-3xl p-6 hover:glass-gold transition-all group hover:-translate-y-2 cursor-default" data-delay="0.0">
+            <div class="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 group-hover:animate-glow-pulse">
+              <i data-lucide="shield" class="w-5 h-5 text-primary"></i>
+            </div>
+            <h3 class="mt-4 font-display text-xl text-foreground">Trusted Advice</h3>
+            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Thousands of readings, hundreds of five-star reviews.</p>
+          </div>
+          <!-- Item 6 -->
+          <div class="reveal glass rounded-3xl p-6 hover:glass-gold transition-all group hover:-translate-y-2 cursor-default" data-delay="0.06">
+            <div class="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 group-hover:animate-glow-pulse">
+              <i data-lucide="video" class="w-5 h-5 text-primary"></i>
+            </div>
+            <h3 class="mt-4 font-display text-xl text-foreground">Online Sessions</h3>
+            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Meet from anywhere — video, audio, or private chat.</p>
+          </div>
+          <!-- Item 7 -->
+          <div class="reveal glass rounded-3xl p-6 hover:glass-gold transition-all group hover:-translate-y-2 cursor-default" data-delay="0.12">
+            <div class="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 group-hover:animate-glow-pulse">
+              <i data-lucide="calendar" class="w-5 h-5 text-primary"></i>
+            </div>
+            <h3 class="mt-4 font-display text-xl text-foreground">Flexible Booking</h3>
+            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Weekend and evening slots available worldwide.</p>
+          </div>
+          <!-- Item 8 -->
+          <div class="reveal glass rounded-3xl p-6 hover:glass-gold transition-all group hover:-translate-y-2 cursor-default" data-delay="0.18">
+            <div class="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 group-hover:animate-glow-pulse">
+              <i data-lucide="users" class="w-5 h-5 text-primary"></i>
+            </div>
+            <h3 class="mt-4 font-display text-xl text-foreground">Secure Communication</h3>
+            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Encrypted channels for every conversation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA CAROUSEL SECTION -->
+    <section id="reel" class="relative py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="reveal text-center max-w-3xl mx-auto mb-14">
+          <span class="inline-block text-xs uppercase tracking-[0.3em] text-primary/80 mb-3">✦ Latest From The Table ✦</span>
+          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-tight text-gradient-gold">Moments, readings & rituals</h2>
+          <p class="mt-4 text-muted-foreground text-base sm:text-lg">Swipe or tap through the newest photos and videos from Siya's practice.</p>
+        </div>
+
+        <!-- Horizontal scrolling track wrapper -->
+        <div class="carousel-wrapper relative group/carousel px-1">
+          <div class="carousel-track flex gap-5 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth pb-4 px-1">
+            <!-- Slide 1 -->
+            <button data-lightbox="assets/images/siya-1.png" data-type="image" class="reveal group relative flex-none w-[85%] sm:w-[45%] md:w-[31%] aspect-[3/4] rounded-3xl overflow-hidden glass-gold glow-gold snap-start cursor-pointer text-left transition-all duration-300 hover:-translate-y-2" data-delay="0.0">
+              <img src="assets/images/siya-1.png" alt="Latest reading portrait" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-65 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </button>
+            <!-- Slide 2 (Video) -->
+            <button data-lightbox="assets/videos/siya-video-1.mp4" data-type="video" class="reveal group relative flex-none w-[85%] sm:w-[45%] md:w-[31%] aspect-[3/4] rounded-3xl overflow-hidden glass-gold glow-gold snap-start cursor-pointer text-left transition-all duration-300 hover:-translate-y-2" data-delay="0.05">
+              <video src="assets/videos/siya-video-1.mp4" muted loop autoplay playsinline preload="metadata" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></video>
+              <div class="absolute inset-0 grid place-items-center pointer-events-none">
+                <div class="grid place-items-center w-14 h-14 rounded-full bg-primary/95 text-primary-foreground glow-gold group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="play" class="w-5 h-5 ml-0.5 fill-current"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-65 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </button>
+            <!-- Slide 3 -->
+            <button data-lightbox="assets/images/siya-2.png" data-type="image" class="reveal group relative flex-none w-[85%] sm:w-[45%] md:w-[31%] aspect-[3/4] rounded-3xl overflow-hidden glass-gold glow-gold snap-start cursor-pointer text-left transition-all duration-300 hover:-translate-y-2" data-delay="0.1">
+              <img src="assets/images/siya-2.png" alt="Sacred reading moment" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-65 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </button>
+            <!-- Slide 4 (Video) -->
+            <button data-lightbox="assets/videos/siya-video-2.mp4" data-type="video" class="reveal group relative flex-none w-[85%] sm:w-[45%] md:w-[31%] aspect-[3/4] rounded-3xl overflow-hidden glass-gold glow-gold snap-start cursor-pointer text-left transition-all duration-300 hover:-translate-y-2" data-delay="0.15">
+              <video src="assets/videos/siya-video-2.mp4" muted loop autoplay playsinline preload="metadata" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></video>
+              <div class="absolute inset-0 grid place-items-center pointer-events-none">
+                <div class="grid place-items-center w-14 h-14 rounded-full bg-primary/95 text-primary-foreground glow-gold group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="play" class="w-5 h-5 ml-0.5 fill-current"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-65 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </button>
+            <!-- Slide 5 -->
+            <button data-lightbox="assets/images/siya-3.png" data-type="image" class="reveal group relative flex-none w-[85%] sm:w-[45%] md:w-[31%] aspect-[3/4] rounded-3xl overflow-hidden glass-gold glow-gold snap-start cursor-pointer text-left transition-all duration-300 hover:-translate-y-2" data-delay="0.2">
+              <img src="assets/images/siya-3.png" alt="Cards on the table" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-65 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </button>
+            <!-- Slide 6 (Video) -->
+            <button data-lightbox="assets/videos/siya-video-3.mp4" data-type="video" class="reveal group relative flex-none w-[85%] sm:w-[45%] md:w-[31%] aspect-[3/4] rounded-3xl overflow-hidden glass-gold glow-gold snap-start cursor-pointer text-left transition-all duration-300 hover:-translate-y-2" data-delay="0.25">
+              <video src="assets/videos/siya-video-3.mp4" muted loop autoplay playsinline preload="metadata" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></video>
+              <div class="absolute inset-0 grid place-items-center pointer-events-none">
+                <div class="grid place-items-center w-14 h-14 rounded-full bg-primary/95 text-primary-foreground glow-gold group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="play" class="w-5 h-5 ml-0.5 fill-current"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-65 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </button>
+            <!-- Slide 7 -->
+            <button data-lightbox="assets/images/siya-4.png" data-type="image" class="reveal group relative flex-none w-[85%] sm:w-[45%] md:w-[31%] aspect-[3/4] rounded-3xl overflow-hidden glass-gold glow-gold snap-start cursor-pointer text-left transition-all duration-300 hover:-translate-y-2" data-delay="0.3">
+              <img src="assets/images/siya-4.png" alt="Tarot table detail" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-65 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </button>
+            <!-- Slide 8 -->
+            <button data-lightbox="assets/images/siya-5.png" data-type="image" class="reveal group relative flex-none w-[85%] sm:w-[45%] md:w-[31%] aspect-[3/4] rounded-3xl overflow-hidden glass-gold glow-gold snap-start cursor-pointer text-left transition-all duration-300 hover:-translate-y-2" data-delay="0.35">
+              <img src="assets/images/siya-5.png" alt="Reading in progress" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-65 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </button>
+          </div>
+
+          <!-- Chevron Navigation - Left -->
+          <button class="carousel-prev absolute left-[-16px] md:left-[-24px] top-1/2 -translate-y-1/2 md:hidden place-items-center w-12 h-12 rounded-full glass hover:glass-gold hover:glow-gold transition-all duration-300 z-20 cursor-pointer">
+            <i data-lucide="chevron-left" class="w-5 h-5 text-primary"></i>
+          </button>
+          <!-- Chevron Navigation - Right -->
+          <button class="carousel-next absolute right-[-16px] md:right-[-24px] top-1/2 -translate-y-1/2 md:hidden place-items-center w-12 h-12 rounded-full glass hover:glass-gold hover:glow-gold transition-all duration-300 z-20 cursor-pointer">
+            <i data-lucide="chevron-right" class="w-5 h-5 text-primary"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="cta" class="relative py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="relative overflow-hidden rounded-[2.5rem] glass-gold p-10 md:p-16 text-center glow-gold">
+          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(ellipse at top, var(--primary), transparent 60%);"></div>
+          <div class="relative">
+            <span class="text-xs tracking-[0.3em] uppercase text-primary">✦ Your Answer Awaits ✦</span>
+            <h2 class="mt-4 font-display text-4xl md:text-6xl text-gradient-gold">Step Into Clarity</h2>
+            <p class="mt-4 text-muted-foreground text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+              No matter what crossroads you stand at, the cards hold a mirror to your options and your truth. Book your reading today.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4 justify-center">
+              <a href="booking.html" class="relative inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground bg-gradient-to-r from-primary via-gold-soft to-primary bg-[length:200%_100%] hover:bg-[position:100%_0] hover:scale-105 transition-all duration-300 glow-gold active:scale-97">
+                Book a Reading
+              </a>
+              <a href="contact.html" class="relative inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-medium tracking-wide text-foreground glass border border-primary/40 hover:glass-gold hover:scale-105 transition-all duration-300 active:scale-97">
+                Ask a Question
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer Injected by main.js -->
+  <footer class="site-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/main.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/services.js"></script>
+  <script>
+    // Local starfield generator logic for immediate paint
+    (function() {
+      const field = document.getElementById('star-field');
+      if (!field) return;
+      const density = 80;
+      for (let i = 0; i < density; i++) {
+        const star = document.createElement('span');
+        const size = Math.random() * 2 + 0.5;
+        star.className = 'absolute rounded-full bg-white animate-twinkle';
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.animationDelay = `${Math.random() * 3}s`;
+        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        star.style.boxShadow = `0 0 ${size * 3}px oklch(1 0 0 / 0.8)`;
+        field.appendChild(star);
+      }
+      
+      // Shooting stars
+      for (let i = 0; i < 3; i++) {
+        const star = document.createElement('span');
+        star.className = 'absolute h-0.5 w-24 bg-gradient-to-r from-transparent via-white to-transparent';
+        star.style.top = `${10 + i * 20}%`;
+        star.style.right = `${-20 + i * 5}%`;
+        star.style.animation = `shooting-star ${6 + i * 2}s ${i * 3}s linear infinite`;
+        field.appendChild(star);
+      }
+    })();
+  </script>
+</body>
+</html>
