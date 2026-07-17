@@ -1,6 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { getEvent } from "vinxi/http";
 
 const payloadSchema = z.object({
   kind: z.enum(["booking", "contact"]),
@@ -89,6 +88,7 @@ function buildHtml(kind: "booking" | "contact", data: EmailPayload) {
 export const sendInquiryEmail = createServerFn({ method: "POST" })
   .validator((input: unknown) => payloadSchema.parse(input))
   .handler(async ({ data }) => {
+    const { getEvent } = await import(/* @vite-ignore */ "vinxi/http");
     const event = getEvent();
     const cloudflareEnv = event?.context?.cloudflare?.env as Record<string, string> | undefined;
 
