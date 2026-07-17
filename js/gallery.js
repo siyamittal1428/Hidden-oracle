@@ -62,15 +62,14 @@ function openLightbox(src, type, alt) {
     container.appendChild(mediaElement);
     container.appendChild(muteBtn);
 
-    // Play with fallback if browser rejects unmuted autoplay
-    setTimeout(() => {
-      mediaElement.play().catch(() => {
-        mediaElement.muted = true;
-        muteBtn.innerHTML = '<i data-lucide="volume-x" class="w-5 h-5 text-foreground"></i>';
-        if (typeof lucide !== "undefined") lucide.createIcons();
-        mediaElement.play();
-      });
-    }, 50);
+    // Play synchronously to retain user gesture for unmuted sound!
+    mediaElement.play().catch((err) => {
+      console.log("Unmuted play blocked, falling back to muted:", err);
+      mediaElement.muted = true;
+      muteBtn.innerHTML = '<i data-lucide="volume-x" class="w-5 h-5 text-foreground"></i>';
+      if (typeof lucide !== "undefined") lucide.createIcons();
+      mediaElement.play().catch(e => console.error("Muted play failed:", e));
+    });
   } else {
     mediaElement = document.createElement("img");
     mediaElement.src = src;

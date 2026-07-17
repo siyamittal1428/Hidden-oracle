@@ -221,9 +221,16 @@ function initFormSubmissions() {
           body: JSON.stringify(payload),
         });
 
+        const text = await response.text();
+
+        // Check if static server (e.g. Live Server) returned PHP source code
+        if (text.includes("<?php") || text.includes("getenv(")) {
+          throw new Error("VS Code Live Server (or similar static server) detected. It does not run PHP code. Please upload these files to your Hostinger/GoDaddy hosting or use a local PHP server (like XAMPP) to send emails.");
+        }
+
         let result;
         try {
-          result = await response.json();
+          result = JSON.parse(text);
         } catch (jsonErr) {
           throw new Error("Unable to parse email server response. Please make sure PHP is running on your server.");
         }
