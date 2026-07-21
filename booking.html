@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Tarot Reading | Hidden Oracle</title>
+  <meta name="description" content="Reserve a private, personalized tarot session with Siya. Video, audio, or chat sessions available." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#151122',
+            foreground: '#faf8f5',
+            primary: '#ebd082',
+            'primary-foreground': '#141021',
+            secondary: '#3b2247',
+            muted: '#28213a',
+            'muted-foreground': '#bebaaa',
+            accent: '#8b3ba0',
+            border: 'rgba(139, 59, 160, 0.25)',
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-background text-foreground font-sans min-h-screen relative selection:bg-primary/30">
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 inset-x-0 z-50 transition-all duration-500 py-5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div id="navbar-inner" class="flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500 glass">
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="grid place-items-center w-9 h-9 rounded-full bg-gradient-to-br from-primary to-accent glow-gold transition-transform group-hover:scale-110 duration-500">
+            <!-- Mystical Tarot Card Icon -->
+            <svg class="w-5 h-5 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="4.5" y="2.5" width="15" height="19" rx="2.5" stroke-width="1.8"></rect>
+              <rect x="6.5" y="4.5" width="11" height="15" rx="1.5" stroke-width="1" stroke-dasharray="2 1"></rect>
+              <circle cx="12" cy="12" r="2.2" stroke-width="1.5"></circle>
+              <path d="M12 7.5v1.5M12 15v1.5M7.5 12h1.5M15 12h1.5" stroke-linecap="round" stroke-width="1.2"></path>
+            </svg>
+          </div>
+          <span class="font-display text-lg sm:text-xl tracking-wide text-gradient-gold font-semibold">
+            Hidden Oracle
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-1">
+          <a href="index.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Home</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="about.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">About</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="services.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Services</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="gallery.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Gallery</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="testimonials.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Testimonials</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="faq.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">FAQ</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="contact.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Contact</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+        </nav>
+
+        <!-- CTA & Mobile Trigger -->
+        <div class="flex items-center gap-2">
+          <!-- Quick Header Social Icons -->
+          <div class="hidden md:flex items-center gap-1.5 mr-1">
+            <a href="https://www.instagram.com/siyamittal2026/" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-8 h-8 rounded-full glass hover:glass-gold hover:text-pink-400 transition-all text-foreground/80" aria-label="Instagram">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/hiddenoraclespkl" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-8 h-8 rounded-full glass hover:glass-gold hover:text-blue-400 transition-all text-foreground/80" aria-label="Facebook">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://wa.me/917814794852" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-8 h-8 rounded-full glass hover:glass-gold hover:text-[#25D366] transition-all text-foreground/80" aria-label="WhatsApp">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.14 4.162 4.256-1.116z"/></svg>
+            </a>
+          </div>
+
+          <a href="booking.html" class="hidden sm:inline-flex items-center rounded-full bg-gradient-to-r from-primary to-primary/80 px-5 py-2 text-sm font-medium text-primary-foreground hover:scale-105 transition-transform glow-gold">
+            Book Reading
+          </a>
+          <button id="mobile-menu-btn" class="lg:hidden grid place-items-center w-10 h-10 rounded-full glass" aria-label="Menu">
+            <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav id="mobile-nav" class="hidden lg:hidden mt-2 glass-gold rounded-3xl p-4 flex flex-col gap-1">
+        <a href="index.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Home</a>
+        <a href="about.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">About</a>
+        <a href="services.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Services</a>
+        <a href="gallery.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Gallery</a>
+        <a href="testimonials.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Testimonials</a>
+        <a href="faq.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">FAQ</a>
+        <a href="contact.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Contact</a>
+        <a href="booking.html" class="mt-2 text-center rounded-full bg-primary px-4 py-3 text-primary-foreground font-medium">Book Reading</a>
+        
+        <div class="mt-2 pt-3 border-t border-border/20 flex justify-around text-xs font-medium">
+          <a href="https://www.instagram.com/siyamittal2026/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:underline">Instagram</a>
+          <a href="https://www.facebook.com/hiddenoraclespkl" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Facebook</a>
+          <a href="https://wa.me/917814794852" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:underline">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="min-h-screen pt-28 pb-20">
+    <section class="py-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs uppercase tracking-[0.25em] text-primary">Reserve Your Space</span>
+          <h1 class="mt-2 font-display text-4xl sm:text-6xl text-foreground">
+            Book a private reading
+          </h1>
+          <p class="mt-3 text-muted-foreground text-sm sm:text-base">Fill in your details below — I'll respond within 24 hours to confirm your session on WhatsApp or email.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-[1.4fr_1fr] gap-8 max-w-6xl mx-auto">
+          <!-- Booking Form -->
+          <div class="glass-gold rounded-3xl p-6 sm:p-10 space-y-5">
+            
+            <form id="booking-form" class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <!-- Full Name -->
+                <div class="floating-group">
+                  <input type="text" name="name" required placeholder=" " class="floating-input" />
+                  <label class="floating-label">Full Name *</label>
+                </div>
+
+                <!-- Email -->
+                <div class="floating-group">
+                  <input type="email" name="email" required placeholder=" " class="floating-input" />
+                  <label class="floating-label">Email *</label>
+                </div>
+
+                <!-- Phone / WhatsApp with Country Selector -->
+                <div class="floating-group sm:col-span-1">
+                  <div class="flex">
+                    <select name="countryCode" class="bg-[#1f1a30] text-foreground border border-border border-r-0 rounded-l-2xl px-3 text-xs focus:outline-none focus:border-primary cursor-pointer">
+                      <option value="+91" class="bg-[#1f1a30]">🇮🇳 +91 (IN)</option>
+                      <option value="+1" class="bg-[#1f1a30]">🇺🇸 +1 (US)</option>
+                      <option value="+44" class="bg-[#1f1a30]">🇬🇧 +44 (UK)</option>
+                      <option value="+971" class="bg-[#1f1a30]">🇦🇪 +971 (UAE)</option>
+                      <option value="+61" class="bg-[#1f1a30]">🇦🇺 +61 (AU)</option>
+                      <option value="+1" class="bg-[#1f1a30]">🇨🇦 +1 (CA)</option>
+                    </select>
+                    <input type="tel" name="phone" required placeholder="Phone / WhatsApp *" class="floating-input !rounded-l-none" />
+                  </div>
+                </div>
+
+                <!-- Country -->
+                <div class="floating-group">
+                  <input type="text" name="country" placeholder=" " class="floating-input" />
+                  <label class="floating-label">Country</label>
+                </div>
+
+                <!-- Reading Type Select -->
+                <div class="relative">
+                  <label class="block text-[11px] uppercase tracking-widest text-primary/80 mb-1">Reading Type *</label>
+                  <div class="relative">
+                    <select id="booking-service-select" name="service" required class="w-full bg-[#1f1a30] border border-border rounded-2xl px-4 py-3.5 text-foreground focus:outline-none focus:border-primary appearance-none cursor-pointer">
+                      <option value="" class="bg-[#1f1a30]">Select a reading</option>
+                      <option value="Love Reading" class="bg-[#1f1a30]">Love Reading</option>
+                      <option value="Relationship Reading" class="bg-[#1f1a30]">Relationship Reading</option>
+                      <option value="Marriage Guidance" class="bg-[#1f1a30]">Marriage Guidance</option>
+                      <option value="Career Reading" class="bg-[#1f1a30]">Career Reading</option>
+                      <option value="Business Reading" class="bg-[#1f1a30]">Business Reading</option>
+                      <option value="Finance Reading" class="bg-[#1f1a30]">Finance Reading</option>
+                      <option value="Family Reading" class="bg-[#1f1a30]">Family Reading</option>
+                      <option value="Spiritual Reading" class="bg-[#1f1a30]">Spiritual Reading</option>
+                      <option value="Energy Healing" class="bg-[#1f1a30]">Energy Healing</option>
+                      <option value="Yes / No Reading" class="bg-[#1f1a30]">Yes / No Reading</option>
+                      <option value="Monthly Tarot Forecast" class="bg-[#1f1a30]">Monthly Tarot Forecast</option>
+                      <option value="Numerology Reading" class="bg-[#1f1a30]">Numerology Reading</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Preferred Date -->
+                <div class="floating-group">
+                  <input type="date" name="date" class="floating-input" />
+                  <label class="floating-label">Preferred Date</label>
+                </div>
+
+                <!-- Preferred Time -->
+                <div class="floating-group">
+                  <input type="time" name="time" class="floating-input" />
+                  <label class="floating-label">Preferred Time</label>
+                </div>
+
+                <!-- Session Format Select -->
+                <div class="relative sm:col-span-1">
+                  <label class="block text-[11px] uppercase tracking-widest text-primary/80 mb-1">Session Format *</label>
+                  <div class="relative">
+                    <select name="sessionType" required class="w-full bg-[#1f1a30] border border-border rounded-2xl px-4 py-3.5 text-foreground focus:outline-none focus:border-primary appearance-none cursor-pointer">
+                      <option value="" class="bg-[#1f1a30]">Choose format</option>
+                      <option value="Video Call" class="bg-[#1f1a30]">Video Call</option>
+                      <option value="Audio Call" class="bg-[#1f1a30]">Audio Call</option>
+                      <option value="Private Chat" class="bg-[#1f1a30]">Private Chat</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message Textarea -->
+                <div class="floating-group sm:col-span-2">
+                  <textarea name="message" rows="4" placeholder=" " class="floating-input"></textarea>
+                  <label class="floating-label">Your Message / Questions</label>
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-3.5 text-sm font-medium hover:scale-105 transition-transform glow-gold">
+                  Request Booking
+                </button>
+                <p class="mt-3 text-xs text-muted-foreground">
+                  By submitting you agree to be contacted about your reading. Payment details will be shared upon confirmation.
+                </p>
+              </div>
+            </form>
+
+            <!-- Success Feedback Container -->
+            <div id="booking-success" class="hidden text-center py-10">
+              <div class="mx-auto grid place-items-center w-16 h-16 rounded-full bg-primary text-primary-foreground glow-gold">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <h3 class="mt-5 font-display text-3xl text-gradient-gold">Request Received ✨</h3>
+              <p class="mt-3 text-muted-foreground max-w-md mx-auto text-sm leading-relaxed">
+                Thank you for booking your session! Siya has received your request and will reach out via Email or WhatsApp within 24 hours to confirm your slot.
+              </p>
+            </div>
+          </div>
+
+          <!-- What Happens Next Sidebar -->
+          <aside class="glass rounded-3xl p-8 h-fit">
+            <h3 class="font-display text-2xl text-gradient-gold">What happens next</h3>
+            <ol class="mt-5 space-y-4 text-sm">
+              <li class="flex gap-3">
+                <span class="grid place-items-center w-7 h-7 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs shrink-0 font-semibold">1</span>
+                <span class="text-foreground/85 leading-relaxed">You submit this form with your preferred date & session type.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="grid place-items-center w-7 h-7 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs shrink-0 font-semibold">2</span>
+                <span class="text-foreground/85 leading-relaxed">Siya personally reviews and confirms your slot within 24 hours.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="grid place-items-center w-7 h-7 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs shrink-0 font-semibold">3</span>
+                <span class="text-foreground/85 leading-relaxed">You'll receive payment details and a private meeting link.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="grid place-items-center w-7 h-7 rounded-full bg-primary/15 border border-primary/30 text-primary text-xs shrink-0 font-semibold">4</span>
+                <span class="text-foreground/85 leading-relaxed">We meet at your scheduled time — a written summary follows.</span>
+              </li>
+            </ol>
+            <div class="mt-8 pt-6 border-t border-border/40 text-xs text-muted-foreground space-y-2">
+              <p>✦ 100% confidential sessions</p>
+              <p>✦ Reschedule up to 24 hours before</p>
+              <p>✦ Sessions in English & Hindi</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="border-t border-border/40 py-12 bg-background relative z-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+          <a href="index.html" class="font-display text-2xl text-gradient-gold font-semibold">Hidden Oracle</a>
+          <p class="mt-1 text-xs text-muted-foreground">Personalized Tarot Readings & Intuitive Guidance by Siya</p>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-6 text-sm text-foreground/80">
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <a href="about.html" class="hover:text-primary transition-colors">About</a>
+          <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+          <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+          <a href="testimonials.html" class="hover:text-primary transition-colors">Testimonials</a>
+          <a href="faq.html" class="hover:text-primary transition-colors">FAQ</a>
+          <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+        </div>
+        <!-- Footer Social Icons -->
+        <div class="flex items-center gap-3">
+          <a href="https://www.instagram.com/siyamittal2026/" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-9 h-9 rounded-full glass hover:glass-gold hover:text-primary transition-all text-foreground/80" aria-label="Instagram">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/hiddenoraclespkl" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-9 h-9 rounded-full glass hover:glass-gold hover:text-primary transition-all text-foreground/80" aria-label="Facebook">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://youtube.com/@hiddenoracle_14" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-9 h-9 rounded-full glass hover:glass-gold hover:text-primary transition-all text-foreground/80" aria-label="YouTube">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+          </a>
+          <a href="https://wa.me/917814794852" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-9 h-9 rounded-full glass hover:glass-gold hover:text-[#25D366] transition-all text-foreground/80" aria-label="WhatsApp">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.14 4.162 4.256-1.116z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-border/20 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground gap-4">
+        <p>© 2026 Hidden Oracle by Siya. All rights reserved.</p>
+        <p class="text-primary/70">Sacred space • Confidential sessions</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auto Select Service URL parameter script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const serviceParam = params.get('service');
+      if (serviceParam) {
+        const select = document.getElementById('booking-service-select');
+        if (select) {
+          select.value = serviceParam;
+        }
+      }
+    });
+  </script>
+
+  <!-- Master JavaScript Engine -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

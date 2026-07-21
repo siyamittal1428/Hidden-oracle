@@ -1,0 +1,312 @@
+/* Hidden Oracle — Master Stylesheet */
+
+:root {
+  --radius: 0.875rem;
+
+  /* Mystical dark palette (OKLCH mapped to CSS variables) */
+  --background: #151122;
+  --foreground: #faf8f5;
+  --card: #1f1a30;
+  --card-foreground: #faf8f5;
+  --popover: #1d182d;
+  --popover-foreground: #faf8f5;
+  
+  --primary: #ebd082;         /* Gold */
+  --primary-foreground: #141021;
+  --secondary: #3b2247;       /* Deep Purple */
+  --secondary-foreground: #faf8f5;
+  --muted: #28213a;
+  --muted-foreground: #bebaaa;
+  --accent: #8b3ba0;          /* Violet */
+  --accent-foreground: #faf8f5;
+  --destructive: #db3939;
+  --destructive-foreground: #faf8f5;
+  
+  --border: rgba(139, 59, 160, 0.25);
+  --input: rgba(139, 59, 160, 0.35);
+  --ring: #ebd082;
+
+  --gold: #ebd082;
+  --gold-soft: #f4e4b5;
+  --mystic: #8b3ba0;
+  --mystic-deep: #211333;
+
+  --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+  --gradient-hero: radial-gradient(ellipse at top, #3c1e54 0%, #151122 55%, #0d0a16 100%);
+  --gradient-gold: linear-gradient(135deg, #f7e8c3, #dcb355);
+  --gradient-mystic: linear-gradient(135deg, #4f2165, #211333);
+  --shadow-glow: 0 0 40px rgba(235, 208, 130, 0.35);
+  --shadow-mystic: 0 20px 60px -20px rgba(139, 59, 160, 0.5);
+}
+
+/* Base resets & typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: rgba(235, 208, 130, 0.3);
+  color: var(--foreground);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0b17;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--gold), var(--mystic));
+  border-radius: 10px;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Glassmorphism & Utility Classes */
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-gold {
+  background: linear-gradient(135deg, rgba(235, 208, 130, 0.08), rgba(139, 59, 160, 0.05));
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(235, 208, 130, 0.25);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #faf3e0, #ebd082, #d8b248);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-mystic {
+  background: linear-gradient(135deg, #f7e8c3, #a855c7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(235, 208, 130, 0.35), 0 0 60px rgba(235, 208, 130, 0.15);
+}
+
+.glow-mystic {
+  box-shadow: 0 0 40px rgba(139, 59, 160, 0.4);
+}
+
+.mystic-border {
+  position: relative;
+  background: linear-gradient(var(--card), var(--card)) padding-box,
+              linear-gradient(135deg, rgba(235, 208, 130, 0.6), rgba(139, 59, 160, 0.4), rgba(235, 208, 130, 0.6)) border-box;
+  border: 1px solid transparent;
+}
+
+/* Animations & Keyframes */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+
+@keyframes float-card {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-30px) rotate(6deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(235, 208, 130, 0.3), 0 0 40px rgba(235, 208, 130, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(235, 208, 130, 0.6), 0 0 80px rgba(235, 208, 130, 0.3); }
+}
+
+@keyframes moon-glow {
+  0%, 100% { filter: drop-shadow(0 0 40px rgba(244, 228, 181, 0.5)); }
+  50% { filter: drop-shadow(0 0 80px rgba(244, 228, 181, 0.8)); }
+}
+
+.animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-float-card { animation: float-card 8s ease-in-out infinite; }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-moon-glow { animation: moon-glow 4s ease-in-out infinite; }
+
+/* Custom Cursor Glow */
+#cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(235, 208, 130, 0.12) 0%, rgba(139, 59, 160, 0.06) 45%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  z-index: 9999;
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--mystic), var(--gold-soft));
+  z-index: 100;
+  transition: width 0.1s ease-out;
+}
+
+/* Accordion Styles */
+.accordion-item {
+  border-bottom: 1px solid rgba(235, 208, 130, 0.15);
+}
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+.accordion-header:hover {
+  color: var(--primary);
+}
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.accordion-item.active .accordion-content {
+  max-height: 300px;
+  padding-bottom: 1.25rem;
+}
+
+/* Lightbox Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(13, 10, 22, 0.85);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Form floating labels */
+.floating-group {
+  position: relative;
+}
+.floating-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem 1rem 0.5rem 1rem;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.floating-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(235, 208, 130, 0.2);
+}
+.floating-label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  pointer-events: none;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label,
+.floating-input[type="date"] ~ .floating-label,
+.floating-input[type="time"] ~ .floating-label {
+  top: 0.4rem;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+/* Custom Select & Option Dark Theme Overrides */
+select, select option, select optgroup {
+  background-color: #1f1a30 !important;
+  color: #faf8f5 !important;
+  border-color: var(--border) !important;
+}
+
+select:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 15px rgba(235, 208, 130, 0.25) !important;
+}
+
+/* Calendar & Clock Picker Icons Dark Mode Invert */
+::-webkit-calendar-picker-indicator {
+  filter: invert(0.85) sepia(1) saturate(3) hue-rotate(5deg);
+  cursor: pointer;
+}

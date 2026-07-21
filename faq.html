@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Tarot Reading Questions | Hidden Oracle</title>
+  <meta name="description" content="Answers to common questions about tarot readings, session formats, confidentiality, and booking." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#151122',
+            foreground: '#faf8f5',
+            primary: '#ebd082',
+            'primary-foreground': '#141021',
+            secondary: '#3b2247',
+            muted: '#28213a',
+            'muted-foreground': '#bebaaa',
+            accent: '#8b3ba0',
+            border: 'rgba(139, 59, 160, 0.25)',
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-background text-foreground font-sans min-h-screen relative selection:bg-primary/30">
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 inset-x-0 z-50 transition-all duration-500 py-5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div id="navbar-inner" class="flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500 glass">
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="grid place-items-center w-9 h-9 rounded-full bg-gradient-to-br from-primary to-accent glow-gold transition-transform group-hover:scale-110 duration-500">
+            <!-- Mystical Tarot Card Icon -->
+            <svg class="w-5 h-5 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="4.5" y="2.5" width="15" height="19" rx="2.5" stroke-width="1.8"></rect>
+              <rect x="6.5" y="4.5" width="11" height="15" rx="1.5" stroke-width="1" stroke-dasharray="2 1"></rect>
+              <circle cx="12" cy="12" r="2.2" stroke-width="1.5"></circle>
+              <path d="M12 7.5v1.5M12 15v1.5M7.5 12h1.5M15 12h1.5" stroke-linecap="round" stroke-width="1.2"></path>
+            </svg>
+          </div>
+          <span class="font-display text-lg sm:text-xl tracking-wide text-gradient-gold font-semibold">
+            Hidden Oracle
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-1">
+          <a href="index.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Home</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="about.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">About</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="services.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Services</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="gallery.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Gallery</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="testimonials.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Testimonials</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="faq.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">FAQ</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+          <a href="contact.html" class="nav-link relative px-3 py-2 text-sm text-foreground/80 hover:text-primary transition-colors group">
+            <span class="relative z-10">Contact</span>
+            <span class="nav-indicator absolute inset-x-3 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+          </a>
+        </nav>
+
+        <!-- CTA & Mobile Trigger -->
+        <div class="flex items-center gap-2">
+          <!-- Quick Header Social Icons -->
+          <div class="hidden md:flex items-center gap-1.5 mr-1">
+            <a href="https://www.instagram.com/siyamittal2026/" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-8 h-8 rounded-full glass hover:glass-gold hover:text-pink-400 transition-all text-foreground/80" aria-label="Instagram">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/hiddenoraclespkl" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-8 h-8 rounded-full glass hover:glass-gold hover:text-blue-400 transition-all text-foreground/80" aria-label="Facebook">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://wa.me/917814794852" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-8 h-8 rounded-full glass hover:glass-gold hover:text-[#25D366] transition-all text-foreground/80" aria-label="WhatsApp">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.14 4.162 4.256-1.116z"/></svg>
+            </a>
+          </div>
+
+          <a href="booking.html" class="hidden sm:inline-flex items-center rounded-full bg-gradient-to-r from-primary to-primary/80 px-5 py-2 text-sm font-medium text-primary-foreground hover:scale-105 transition-transform glow-gold">
+            Book Reading
+          </a>
+          <button id="mobile-menu-btn" class="lg:hidden grid place-items-center w-10 h-10 rounded-full glass" aria-label="Menu">
+            <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav id="mobile-nav" class="hidden lg:hidden mt-2 glass-gold rounded-3xl p-4 flex flex-col gap-1">
+        <a href="index.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Home</a>
+        <a href="about.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">About</a>
+        <a href="services.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Services</a>
+        <a href="gallery.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Gallery</a>
+        <a href="testimonials.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Testimonials</a>
+        <a href="faq.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">FAQ</a>
+        <a href="contact.html" class="px-4 py-3 rounded-2xl hover:bg-primary/10 text-foreground/90">Contact</a>
+        <a href="booking.html" class="mt-2 text-center rounded-full bg-primary px-4 py-3 text-primary-foreground font-medium">Book Reading</a>
+        
+        <div class="mt-2 pt-3 border-t border-border/20 flex justify-around text-xs font-medium">
+          <a href="https://www.instagram.com/siyamittal2026/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:underline">Instagram</a>
+          <a href="https://www.facebook.com/hiddenoraclespkl" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Facebook</a>
+          <a href="https://wa.me/917814794852" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:underline">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="min-h-screen pt-28 pb-20">
+    <section class="py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs uppercase tracking-[0.25em] text-primary">Answers</span>
+          <h1 class="mt-2 font-display text-4xl sm:text-6xl text-foreground">
+            Frequently asked questions
+          </h1>
+          <p class="mt-3 text-muted-foreground text-sm sm:text-base">Everything you need to know before booking your reading.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto glass-gold rounded-3xl p-4 sm:p-8">
+          <div class="accordion">
+            
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>How do online tarot readings work?</span>
+                <svg class="w-5 h-5 accordion-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content">
+                You'll pick a time slot, complete a short intake form, and meet me via video, audio, or private chat. You'll receive a written summary after the session.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>Are my readings confidential?</span>
+                <svg class="w-5 h-5 accordion-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content">
+                Absolutely. Every session is 100% private. I never share names, questions, or reading details.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>How accurate are tarot readings?</span>
+                <svg class="w-5 h-5 accordion-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content">
+                Tarot works with the energies present at the moment of the reading. It reflects patterns and probabilities — your free will always shapes the outcome.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>What should I prepare before my session?</span>
+                <svg class="w-5 h-5 accordion-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content">
+                Come with an open heart and one or two focused questions. Water, journaling, and a quiet space help you receive the most.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>Can you predict specific dates or names?</span>
+                <svg class="w-5 h-5 accordion-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content">
+                Tarot is stronger with themes and timing windows than exact names or dates. I'll always be honest about what the cards can and cannot show.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>Do you offer refunds?</span>
+                <svg class="w-5 h-5 accordion-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content">
+                If you're unable to attend, we can reschedule once at no cost. Please review the full policy before booking.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>How often should I get a reading?</span>
+                <svg class="w-5 h-5 accordion-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content">
+                Once every 1-3 months is ideal for most seekers. Coming too often can cloud the guidance you've already received.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header">
+                <span>Do you take walk-in or same-day bookings?</span>
+                <svg class="w-5 h-5 accordion-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content">
+                Yes, subject to availability. Reach out on WhatsApp or the contact form for urgent slots.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-muted-foreground mb-4">Still have questions?</p>
+          <a href="contact.html" class="inline-flex items-center rounded-full bg-primary text-primary-foreground px-8 py-3.5 text-sm font-medium hover:scale-105 transition-transform glow-gold">
+            Reach Out
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="border-t border-border/40 py-12 bg-background relative z-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+          <a href="index.html" class="font-display text-2xl text-gradient-gold font-semibold">Hidden Oracle</a>
+          <p class="mt-1 text-xs text-muted-foreground">Personalized Tarot Readings & Intuitive Guidance by Siya</p>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-6 text-sm text-foreground/80">
+          <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+          <a href="about.html" class="hover:text-primary transition-colors">About</a>
+          <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+          <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+          <a href="testimonials.html" class="hover:text-primary transition-colors">Testimonials</a>
+          <a href="faq.html" class="hover:text-primary transition-colors">FAQ</a>
+          <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+        </div>
+        <!-- Footer Social Icons -->
+        <div class="flex items-center gap-3">
+          <a href="https://www.instagram.com/siyamittal2026/" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-9 h-9 rounded-full glass hover:glass-gold hover:text-primary transition-all text-foreground/80" aria-label="Instagram">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/hiddenoraclespkl" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-9 h-9 rounded-full glass hover:glass-gold hover:text-primary transition-all text-foreground/80" aria-label="Facebook">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://youtube.com/@hiddenoracle_14" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-9 h-9 rounded-full glass hover:glass-gold hover:text-primary transition-all text-foreground/80" aria-label="YouTube">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+          </a>
+          <a href="https://wa.me/917814794852" target="_blank" rel="noopener noreferrer" class="grid place-items-center w-9 h-9 rounded-full glass hover:glass-gold hover:text-[#25D366] transition-all text-foreground/80" aria-label="WhatsApp">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.14 4.162 4.256-1.116z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-border/20 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground gap-4">
+        <p>© 2026 Hidden Oracle by Siya. All rights reserved.</p>
+        <p class="text-primary/70">Sacred space • Confidential sessions</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript Engine -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
